@@ -1,0 +1,22 @@
+language: python
+
+cache: pip
+
+python:
+    - "3.3"
+    - "3.4"
+    - "3.5"
+    - "3.5-dev"
+    - "nightly"
+
+install:
+    - pip install coveralls
+    - pip install codecov
+    - pip install .
+
+script:
+    - nosetests --with-coverage --cover-package=pycvesearch
+
+after_success:
+    - codecov
+    - coveralls
