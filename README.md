@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/cve-search/PyCVESearch.svg?branch=master)](https://travis-ci.org/cve-search/PyCVESearch)
+
+
 **PyCVESearch** is an easy to use wrapper around cve-search, defaulting on https://cve.circl.lu.
 
 This library is based on the work of [Martin Simon](https://github.com/mrsmn/ares) and [Kai Renken](https://github.com/elektrischermoench/ares3).
