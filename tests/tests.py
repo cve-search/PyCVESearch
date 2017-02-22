@@ -22,6 +22,9 @@ class TestPyCVESearch(unittest.TestCase):
     def test_last(self):
         self.cve.last()
 
+    def test_last_50(self):
+        self.cve.last(50)
+
     def test_dbinfo(self):
         self.cve.dbinfo()
 

@@ -42,11 +42,11 @@ class CVESearch(object):
         data = self._http_get('cve', query=param)
         return data.json()
 
-    def last(self):
+    def last(self, param=None):
         """ last() returns a dict containing the last 30 CVEs including CAPEC,
             CWE and CPE expansions
         """
-        data = self._http_get('last')
+        data = self._http_get('last', query=param)
         return data.json()
 
     def dbinfo(self):
