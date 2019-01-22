@@ -51,13 +51,13 @@ From source use
 - **`GET /api/cpe2.2/cpe`**
 
 ```python
->>> cve.cpe22('cpe:2.3:a:microsoft:office:2011:-:mac')
+>>> cve.cpe22('cpe:/a:microsoft:office:2011::mac')
 ```
 
 - **`GET /api/cpe2.3/cpe`**
 
 ```python
->>> cve.cpe23('cpe:/a:microsoft:office:2011::mac')
+>>> cve.cpe23('cpe:2.3:a:microsoft:office:2011:-:mac')
 ```
 
 - **`GET /api/cvefor/cpe`**
