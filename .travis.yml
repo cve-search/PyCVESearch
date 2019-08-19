@@ -1,12 +1,14 @@
 language: python
 
 cache: pip
+dist: bionic
+group: edge
 
 python:
-    - "3.3"
-    - "3.4"
-    - "3.5"
-    - "3.5-dev"
+    - "3.6"
+    - "3.6-dev"
+    - "3.7"
+    - "3.7-dev"
     - "nightly"
 
 install:
