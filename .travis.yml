@@ -12,12 +12,11 @@ python:
     - "nightly"
 
 install:
-    - pip install coveralls
-    - pip install codecov
-    - pip install .
+    - pip install pipenv
+    - pipenv install -d
 
 script:
-    - nosetests --with-coverage --cover-package=pycvesearch
+    - pipenv run nosetests-3.4 -s --with-coverage --cover-package=pycvesearch
 
 after_success:
     - codecov

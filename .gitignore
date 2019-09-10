@@ -1,3 +1,5 @@
 pycvesearch.egg-info/
 *.pyc
 *.swp
+
+.coverage
