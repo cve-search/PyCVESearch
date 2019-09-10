@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import requests
@@ -19,11 +19,11 @@ class CVESearch(object):
         self.timeout = timeout
 
     def _http_get(self, api_call, query=None):
-        return self.session.get(
-            urljoin(
-                self.base_url,
-                '/'.join(filter(None, ('api', str(api_call), str(query))))),
-            timeout=self.timeout)
+        if query is None:
+            url = urljoin(self.base_url, f'api/{api_call}')
+        else:
+            url = urljoin(self.base_url, f'api/{api_call}/{query}')
+        return self.session.get(url, timeout=self.timeout)
 
     def browse(self, param=None):
         """ browse() returns a dict containing all the vendors browse(vendor)

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 from setuptools import setup
@@ -20,7 +20,7 @@ setup(
         'Environment :: Console',
         'Intended Audience :: Science/Research',
         'Intended Audience :: Telecommunications Industry',
-        'Programming Language :: Python',
+        'Programming Language :: Python :: 3',
         'Topic :: Security',
         'Topic :: Internet',
     ],
