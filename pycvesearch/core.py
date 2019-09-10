@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import requests
@@ -8,20 +8,22 @@ from urllib.parse import urljoin
 
 class CVESearch(object):
 
-    def __init__(self, base_url='https://cve.circl.lu', proxies=None):
+    def __init__(self, base_url='https://cve.circl.lu', proxies=None,
+                 timeout=None):
         self.base_url = base_url
         self.session = requests.Session()
         self.session.proxies = proxies
         self.session.headers.update({
             'content-type': 'application/json',
             'User-Agent': 'PyCVESearch - python wrapper'})
+        self.timeout = timeout
 
     def _http_get(self, api_call, query=None):
         if query is None:
-            response = self.session.get(urljoin(self.base_url, 'api/{}'.format(api_call)))
+            url = urljoin(self.base_url, f'api/{api_call}')
         else:
-            response = self.session.get(urljoin(self.base_url, 'api/{}/{}'.format(api_call, query)))
-        return response
+            url = urljoin(self.base_url, f'api/{api_call}/{query}')
+        return self.session.get(url, timeout=self.timeout)
 
     def browse(self, param=None):
         """ browse() returns a dict containing all the vendors browse(vendor)

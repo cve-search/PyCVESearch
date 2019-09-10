@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 from setuptools import setup
@@ -12,7 +12,7 @@ setup(
     license='Apache v2.0 License',
     packages=['pycvesearch'],
     description='A python wrapper around cve.circl.lu',
-    long_description=open('README.md', 'r').read(),
+    long_description=open('README.md', 'rb').read().decode('UTF-8'),
     keywords=['CVE', 'API', 'wrapper'],
     classifiers=[
         'License :: OSI Approved :: BSD License',
@@ -20,7 +20,7 @@ setup(
         'Environment :: Console',
         'Intended Audience :: Science/Research',
         'Intended Audience :: Telecommunications Industry',
-        'Programming Language :: Python',
+        'Programming Language :: Python :: 3',
         'Topic :: Security',
         'Topic :: Internet',
     ],
