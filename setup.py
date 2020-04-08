@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from setuptools import setup
+from setuptools import setup  # type: ignore
 
 setup(
     name='pycvesearch',
@@ -15,7 +15,7 @@ setup(
     long_description=open('README.md', 'rb').read().decode('UTF-8'),
     keywords=['CVE', 'API', 'wrapper'],
     classifiers=[
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: Apache Software License',
         'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
         'Intended Audience :: Science/Research',

@@ -5,12 +5,15 @@
 
 This library is based on the work of [Martin Simon](https://github.com/mrsmn/ares) and [Kai Renken](https://github.com/elektrischermoench/ares3).
 
+**Important Note**: The API endpoint has been removed from the public instance due to massive abusive behavior. You can use this API against a local version of CVE Search.
+
+
 ## Installation:
 
 From source use
 
 ```
-    $ pip install .
+    $ pip install pycvesearch
 ```
 
 ## Documentation:

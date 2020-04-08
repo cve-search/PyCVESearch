@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 import requests
+from typing import Optional, Dict, MutableMapping
 
 from urllib.parse import urljoin
 
 
 class CVESearch(object):
 
-    def __init__(self, base_url='https://cve.circl.lu', proxies=None,
-                 timeout=None):
+    def __init__(self, base_url: str, proxies: MutableMapping[str, str]={}, timeout: Optional[int]=None):
         self.base_url = base_url
         self.session = requests.Session()
         self.session.proxies = proxies
@@ -25,33 +25,33 @@ class CVESearch(object):
             url = urljoin(self.base_url, f'api/{api_call}/{query}')
         return self.session.get(url, timeout=self.timeout)
 
-    def browse(self, param=None):
+    def browse(self, param=None) -> Dict:
         """ browse() returns a dict containing all the vendors browse(vendor)
             returns a dict containing all the products associated to a vendor
         """
         data = self._http_get('browse', query=param)
         return data.json()
 
-    def search(self, param):
+    def search(self, param) -> Dict:
         """ search() returns a dict containing all the vulnerabilities per
             vendor and a specific product
         """
         data = self._http_get('search', query=param)
         return data.json()
 
-    def id(self, param):
+    def id(self, param) -> Dict:
         """ id() returns a dict containing a specific CVE ID """
         data = self._http_get('cve', query=param)
         return data.json()
 
-    def last(self, param=None):
+    def last(self, param=None) -> Dict:
         """ last() returns a dict containing the last 30 CVEs including CAPEC,
             CWE and CPE expansions
         """
         data = self._http_get('last', query=param)
         return data.json()
 
-    def dbinfo(self):
+    def dbinfo(self) -> Dict:
         """ dbinfo() returns a dict containing more information about
             the current databases in use and when it was updated
         """
@@ -70,7 +70,7 @@ class CVESearch(object):
         data = self._http_get('cpe2.3', query=param)
         return data
 
-    def cvefor(self, param):
+    def cvefor(self, param) -> Dict:
         """ cvefor() returns a dict containing the CVE's for a given CPE ID
         """
         data = self._http_get('cvefor', query=param)
