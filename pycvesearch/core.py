@@ -9,7 +9,7 @@ from urllib.parse import urljoin
 
 class CVESearch(object):
 
-    def __init__(self, base_url: str, proxies: MutableMapping[str, str]={}, timeout: Optional[int]=None):
+    def __init__(self, base_url: 'https://cve.circl.lu/', proxies: MutableMapping[str, str]={}, timeout: Optional[int]=None):
         self.base_url = base_url
         self.session = requests.Session()
         self.session.proxies = proxies
