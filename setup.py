@@ -5,7 +5,7 @@ from setuptools import setup  # type: ignore
 
 setup(
     name='pycvesearch',
-    version='0.5',
+    version='1.2-dev',
     url='https://github.com/cve-search/PyCVESearch',
     author='Raphaël Vinot',
     author_email='raphael.vinot@circl.lu',
