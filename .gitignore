@@ -3,3 +3,7 @@ pycvesearch.egg-info/
 *.swp
 
 .coverage
+
+.mypy_cache/
+
+dist
