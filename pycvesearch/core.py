@@ -9,7 +9,7 @@ from urllib.parse import urljoin
 
 class CVESearch(object):
 
-    def __init__(self, base_url: str, proxies: MutableMapping[str, str]={}, timeout: Optional[int]=None):
+    def __init__(self, base_url: str, proxies: MutableMapping[str, str]={}, timeout: Optional[int]=None, verify=True):
         self.base_url = base_url
         self.session = requests.Session()
         self.session.proxies = proxies
@@ -17,13 +17,14 @@ class CVESearch(object):
             'content-type': 'application/json',
             'User-Agent': 'PyCVESearch - python wrapper'})
         self.timeout = timeout
+        self.verify = verify
 
     def _http_get(self, api_call, query=None):
         if query is None:
             url = urljoin(self.base_url, f'api/{api_call}')
         else:
             url = urljoin(self.base_url, f'api/{api_call}/{query}')
-        return self.session.get(url, timeout=self.timeout)
+        return self.session.get(url, timeout=self.timeout, verify=self.verify)
 
     def browse(self, param=None) -> Dict:
         """ browse() returns a dict containing all the vendors browse(vendor)
