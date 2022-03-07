@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/cve-search/PyCVESearch.svg?branch=master)](https://travis-ci.org/cve-search/PyCVESearch)
-
+[![Python application](https://github.com/cve-search/PyCVESearch/actions/workflows/mypy.yml/badge.svg)](https://github.com/cve-search/PyCVESearch/actions/workflows/mypy.yml)
 
 **PyCVESearch** is an easy to use wrapper around cve-search, defaulting on https://cve.circl.lu.
 
