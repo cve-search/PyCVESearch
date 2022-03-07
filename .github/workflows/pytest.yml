@@ -28,8 +28,9 @@ jobs:
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip poetry
+        poetry install
 
-    - name: Test with nosetests
+    - name: Test with pytest
       run: |
         poetry run pytest --cov=pycvesearch tests/tests.py
 
