@@ -8,7 +8,7 @@ from pycvesearch import CVESearch
 class TestPyCVESearch(unittest.TestCase):
 
     def setUp(self):
-        self.cve = CVESearch()
+        self.cve = CVESearch('https://cve.circl.lu')
 
     def test_browse(self):
         self.cve.browse('microsoft')

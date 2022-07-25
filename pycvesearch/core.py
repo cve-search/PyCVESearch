@@ -1,21 +1,24 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import requests
-from typing import Optional, Dict, MutableMapping
+import pkg_resources
 
+from typing import Optional, Dict, MutableMapping
 from urllib.parse import urljoin
+
+import requests
 
 
 class CVESearch(object):
 
-    def __init__(self, base_url: str='https://cve.circl.lu/', proxies: MutableMapping[str, str]={}, timeout: Optional[int]=None, verify=True):
+    def __init__(self, base_url: str, proxies: MutableMapping[str, str]={}, timeout: Optional[int]=None,
+                 verify=True, useragent: Optional[str]=None):
         self.base_url = base_url
         self.session = requests.Session()
         self.session.proxies = proxies
         self.session.headers.update({
             'content-type': 'application/json',
-            'User-Agent': 'PyCVESearch - python wrapper'})
+            'User-Agent': useragent if useragent else f'PyCVESearch / {pkg_resources.get_distribution("pycvesearch").version}'})
         self.timeout = timeout
         self.verify = verify
 
