@@ -1,6 +1,6 @@
 [![Python application](https://github.com/cve-search/PyCVESearch/actions/workflows/mypy.yml/badge.svg)](https://github.com/cve-search/PyCVESearch/actions/workflows/mypy.yml)
 
-**PyCVESearch** is an easy to use wrapper around cve-search, defaulting on https://cve.circl.lu.
+**PyCVESearch** is an easy to use wrapper around cve-search. Some of the calls will work against https://cve.circl.lu but for most of them, you need your own CVE Search instance.
 
 This library is based on the work of [Martin Simon](https://github.com/mrsmn/ares) and [Kai Renken](https://github.com/elektrischermoench/ares3).
 
